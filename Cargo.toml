@@ -1,0 +1,25 @@
+[package]
+name = "dg_edge_updater"
+version = "1.0.0"
+edition = "2024"
+authors = ["James Hoerr"]
+description = "Edge Updater for Garden OS"
+license = "Apache-2.0"
+homepage = "https://github.com/GalactechsLLC/dg_edge_updater"
+repository = "https://github.com/GalactechsLLC/dg_edge_updater"
+
+[[bin]]
+name="dg_edge_updater"
+path="src/main.rs"
+
+[lib]
+path="src/lib.rs"
+
+[dependencies]
+dg_logger = { version="2.1.1" }
+log = "0.4.22"
+reqwest = {version="0.12.4", default-features = false, features = ["rustls-tls", "json", "stream"] }
+semver = "1.0.26"
+serde = { version = "1.0.217", features = ["derive"] }
+serde_yaml = "0.9.33"
+tokio = { version = "1.43.0", features = ["rt", "rt-multi-thread", "macros", "process"] }
