@@ -16,10 +16,14 @@ path="src/main.rs"
 path="src/lib.rs"
 
 [dependencies]
-dg_logger = { version="2.1.2" }
+dg_logger = { git = "https://github.com/GalactechsLLC/dg_xch_utils.git", branch = "main" }
 log = "0.4.22"
 reqwest = {version="0.12.4", default-features = false, features = ["rustls-tls", "json", "stream"] }
 semver = "1.0.26"
 serde = { version = "1.0.217", features = ["derive"] }
 serde_yaml = "0.9.33"
-tokio = { version = "1.43.0", features = ["rt", "rt-multi-thread", "macros", "process"] }
+tokio = { version = "1.43.0", features = ["rt", "rt-multi-thread", "macros", "process", "time", "fs", "io-util"] }
+
+ring = "0.17.14"
+tempfile = "3.18.0"
+libc = "0.2.172"
